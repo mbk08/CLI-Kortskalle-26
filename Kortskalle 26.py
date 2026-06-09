@@ -92,12 +92,12 @@ def spilleregler():
             " - "
         ).lower()
         time.sleep(0.5)
-        print()
-    skrivTekst("Du/dere vil også få muligheten til å lese reglene før spillet starter.")
-    print("-------------------------------")
-    time.sleep(1)
     print()
 spilleregler()
+skrivTekst("Du/dere vil også få muligheten til å lese reglene før spillet starter.")
+print("-------------------------------")
+time.sleep(1)
+print()
 
 #-----------------------------------------------------------SPILLERE
 skrivTekst("Velg antall spillere: (Anbefalt: ~3-7)")
@@ -139,7 +139,7 @@ autoKarakterer = [
     "Joe Biden", "Winston Churchill", "Nelson Mandela", "Angela Merkel", "Vladimir Putin", 
     "Einar Gerhardsen", "Kåre Willoch", "Margaret Thatcher", "John F. Kennedy", "Abraham Lincoln", 
     "George Washington", "Emmanuel Macron", "Justin Trudeau", "Kim Jong-un", "Bill Clinton", 
-    "Ronald Reagan", "Jonas Gahr Støre", "Trygve Slagsvold Vedum", "Sylvi Listhaug", "Adolf Hitler"
+    "Ronald Reagan", "Jonas Gahr Støre", "Trygve Slagsvold Vedum", "Sylvi Listhaug", "Adolf Hitler",
 
 
     # --- HISTORISKE PERSONER (25 stk) ---
@@ -332,7 +332,7 @@ while playing == True:
                     "så mange ja/nei-spørsmål som mulig!\n"
                     "Alle spørsmålene må være om\n"
                     "enten person eller sted.\n"
-                    "Start tiden?: ")
+                    "Start tiden? ('Enter'): ")
                 tid = 30
                 for x in range (30):
                     print(tid)
@@ -382,6 +382,15 @@ while playing == True:
                     skrivTekst(
                         f"Gratulerer, du gjettet både karakteren og stedet ditt riktig, og har vunnet spillet!"
                     )
+                else:
+                    if playing == True:
+                        skrivTekst(
+                            f"Fordi du ikke gjettet både karakteren og stedet ditt riktig, må du fortsette spillet. Du kan gjette igjen senere!"
+                        )
+                    else:
+                        skrivTekst(
+                            f"Fordi du ikke gjettet både karakteren og stedet ditt riktig, er du ute av spillet..."
+                        )
             else:
                 gjettetRiktig = skrivInput(
                     "Gjett karakteren din for dine medspillere.\n"
